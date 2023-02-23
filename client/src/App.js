@@ -7,6 +7,7 @@ import Welcome from './pages/Welcome';
 import DashBoard from './pages/DashBoard';
 import CounselorDetail from './pages/CounselorDetail';
 import ActivityDetail from './pages/ActivityDetail';
+import Login from './pages/Login';
 
 function App() {
   return (
