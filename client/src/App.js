@@ -7,9 +7,6 @@ import {Routes ,Route} from "react-router-dom"
 function App() {
   return (
     <div className="App">
-      {/* <Appbar />
-      <Student /> */}
-      <Navbar />
       <Routes>
         <Route path="/" element={<Navbar />}/>
         <Route path="/login" element={<Navbar />}/>
