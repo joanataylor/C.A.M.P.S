@@ -11,7 +11,7 @@ import VerticalNavbar from './components/VerticalNavbar';
 function App() {
   return (
     <div className="App">
-      <Navbar />     
+      <Navbar />
       <Routes>
         <Route path="/" element={<Welcome/>}/>
         <Route path="/login" element={<Login />}/>
