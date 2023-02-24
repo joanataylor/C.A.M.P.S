@@ -17,3 +17,8 @@
 .card-overlay:hover {
   opacity: 1;
 }
+
+.my-main-card {
+  /* Change this value to adjust the width of the card */
+  width: 550px;
+}
