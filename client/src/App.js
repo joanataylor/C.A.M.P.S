@@ -19,7 +19,6 @@ function App() {
         <Route path="/counselor" element={<CounselorDetail />}/>
         <Route path="/activity" element={<ActivityDetail />}/>
         <Route path="/vertical" element={<VerticalNavbar />}/>
-
       </Routes>
 
     </div>
