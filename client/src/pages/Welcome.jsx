@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useOutletContext, Link } from "react-router-dom";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
