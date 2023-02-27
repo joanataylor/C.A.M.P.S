@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useOutletContext, Link } from "react-router-dom";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -27,10 +26,10 @@ function Welcome() {
   };
 
   return (
-    <div>
+    <div className="container-fluid" style={{ backgroundColor: "#E0E0E0" }}>
       <div
         id="background image"
-        className="border border-dark mb-2"
+        className="mb-2"
         style={{
           backgroundImage: `url("https://i.imgur.com/7I5G9at.jpg")`,
         }}
@@ -103,40 +102,78 @@ function Welcome() {
           </div>
         </div>
       </div>
-      <div className="d-flex justify-content-around ">
-          <Card sx={{ width: 350 }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image="https://i.imgur.com/chbZMgC.jpg"
-                alt="soccer"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h8" component="div">
-                  Beach Games
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-          <Card sx={{ width: 350 }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image="https://i.imgur.com/glDKcxE.jpg"
-                alt="surfing"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h8" component="div">
-                  Surfing
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
+      <div
+        className="d-flex justify-content-around "
+        style={{ backgroundColor: "#E0E0E0" }}
+      >
+        <Card sx={{ width: 300 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image="https://i.imgur.com/chbZMgC.jpg"
+            alt="Beach Soccer"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h8" component="div">
+              Beach Games
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card sx={{ width: 300 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image="https://i.imgur.com/9Efe946.jpg"
+            alt="Fishing"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h8" component="div">
+              Fishing
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card sx={{ width: 300 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image="https://i.imgur.com/l9UipTU.jpg"
+            alt="Paddle Boarding"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h8" component="div">
+              Paddle Boarding
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card sx={{ width: 300 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image="https://i.imgur.com/KghTggo.jpg"
+            alt="Water Ski"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h8" component="div">
+              Water Skiing
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card sx={{ width: 300 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image="https://i.imgur.com/glDKcxE.jpg"
+            alt="surfing"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h8" component="div">
+              Surfing
+            </Typography>
+          </CardContent>
+        </Card>
       </div>
       <div
-        className="d-flex justify-content-around mt-2"
+        className="d-flex justify-content-around mt-2 mb-2"
         style={{ backgroundColor: "#1976D2" }}
       >
         <form>
