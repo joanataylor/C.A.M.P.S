@@ -148,7 +148,7 @@ function DashBoard() {
                     <div className='container' style={{ height: "100%" }}>
                         <p className='h2 text-center'>All Activities</p>
                         <div style={{ height: "50%",width: "100%", overflow: "scroll", scrollBehavior: "smooth"}} className="mt-3 scroll">
-                            {activities && data.map((activity) => {
+                            {activities? activities.map((activity) => {
                                 return (
                                     <div key={activity.name} className='d-flex justify-content-between lign-items-center w-75' style={{ margin: "0 auto" }}>
                                         <a href='#'>
@@ -157,7 +157,7 @@ function DashBoard() {
                                         <p>{activity.date}</p>
                                     </div>
                                 )
-                            })}
+                            }) : ""}
                         </div>
                         <p className='h2 text-center'>All Counselors</p>
                         <div style={{ height: "50%" }}>
