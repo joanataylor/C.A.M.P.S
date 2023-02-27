@@ -48,10 +48,10 @@ function Welcome() {
     }
 
     return (
-        <div>
+        <div className="container-fluid" style={{ backgroundColor: "#e0e0e0" }}>
             <div
                 id="background image"
-                className="border border-dark mb-2"
+                className=" mb-2"
                 style={{
                     backgroundImage: `url("https://i.imgur.com/7I5G9at.jpg")`,
                 }}
@@ -125,23 +125,59 @@ function Welcome() {
                 </div>
             </div>
             <div className="d-flex justify-content-around ">
-                <Card sx={{ width: 350 }}>
-                    <CardActionArea>
+                <Card sx={{ width: 300 }}>
                         <CardMedia
                             component="img"
                             height="140"
                             image="https://i.imgur.com/chbZMgC.jpg"
-                            alt="soccer"
+                            alt="Beach Games"
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h8" component="div">
+                            <Typography gutterBottom variant="h7" component="div">
                                 Beach Games
                             </Typography>
                         </CardContent>
-                    </CardActionArea>
                 </Card>
-                <Card sx={{ width: 350 }}>
-                    <CardActionArea>
+                <Card sx={{ width: 300 }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="https://i.imgur.com/9Efe946.jpg"
+                            alt="Fishing"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h7" component="div">
+                                Fishing
+                            </Typography>
+                        </CardContent>
+                </Card>
+                <Card sx={{ width: 300 }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="https://i.imgur.com/KghTggo.jpg"
+                            alt="Water Skiing"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h7" component="div">
+                                Water Skiing
+                            </Typography>
+                        </CardContent>
+                </Card>
+                <Card sx={{ width: 300 }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="https://i.imgur.com/l9UipTU.jpg"
+                            alt="Paddle Boarding"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h7" component="div">
+                                Paddle Boarding
+                            </Typography>
+                        </CardContent>
+                </Card>
+                <Card sx={{ width: 300 }}>
                         <CardMedia
                             component="img"
                             height="140"
@@ -149,11 +185,10 @@ function Welcome() {
                             alt="surfing"
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h8" component="div">
+                            <Typography gutterBottom variant="h7" component="div">
                                 Surfing
                             </Typography>
                         </CardContent>
-                    </CardActionArea>
                 </Card>
             </div>
             <div
