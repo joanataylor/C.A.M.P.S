@@ -3,51 +3,59 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import "./styles/counselor.css";
 
+const counselors = [
+  {
+    id: 1,
+    name: "Gokhan Sigircik",
+    location: "Turkey",
+    src: "https://media.licdn.com/dms/image/C4E03AQFOGCpxF3oHVQ/profile-displayphoto-shrink_800_800/0/1656388466701?e=1682553600&v=beta&t=gEWxp-U8xykoEqJZO3JNYvI5wj_G34K4g194pa7zAb8",
+    alt: "Gokhan Sigircik",
+  },
+  {
+    id: 2,
+    name: "Ethan Smith",
+    location: "Arizona",
+    src: "https://media.licdn.com/dms/image/C5603AQFWzIHj7Ijo2g/profile-displayphoto-shrink_800_800/0/1653944302306?e=1682553600&v=beta&t=4SBjWI3gH5OfT7Sm4-Xe1sWixose0YD9SuFjRZthEgg",
+    alt: "Ethan Smith",
+  },
+  {
+    id: 3,
+    name: "Brandon DeBenedectis",
+    location: "California",
+    src: "https://media.licdn.com/dms/image/D5635AQEJSvwkYb6jrw/profile-framedphoto-shrink_800_800/0/1676223550707?e=1677873600&v=beta&t=TdWJ-46nftzDWfJHeehT9DmXF3WLXgjYhSjWoh0aVAE",
+    alt: "Brandon DeBenedectis",
+  },
+  {
+    id: 4,
+    name: "Joana Grave",
+    location: "Portugal",
+    src: "https://media.licdn.com/dms/image/D5603AQGSRUXV7UZdGg/profile-displayphoto-shrink_400_400/0/1668811669457?e=1682553600&v=beta&t=yY14ue6KYvAKAeHso6C1inNWJHslP7ycuTsMSYPlGdU",
+    alt: "Joana Grave",
+  },
+  {
+    id: 5,
+    name: "Rochelle Beckford",
+    location: "New York",
+    src: "https://media.licdn.com/dms/image/C4E03AQE1av6TQbUFLA/profile-displayphoto-shrink_800_800/0/1657157060858?e=1683158400&v=beta&t=ZwLbOhWoDgiOrfTXHw2F3P8TfVSN0zotPURXf-Ui6k0",
+    alt: "Rochelle Beckford",
+  },
+  {
+    id: 6,
+    name: "Rochelle Beckford",
+    location: "New York",
+    src: "https://media.licdn.com/dms/image/C4E03AQE1av6TQbUFLA/profile-displayphoto-shrink_800_800/0/1657157060858?e=1683158400&v=beta&t=ZwLbOhWoDgiOrfTXHw2F3P8TfVSN0zotPURXf-Ui6k0",
+    alt: "Rochelle Beckford",
+  },
+];
+
 function CounselorDetail() {
-  const [selectedCounselor, setSelectedCounselor] = useState(null);
+  const [selectedCounselor, setSelectedCounselor] = useState(counselors[0]);
 
   const handleCounselorChange = (counselorId) => {
     const selectedCounselor = counselors.find((counselor) => counselor.id === counselorId);
     setSelectedCounselor(selectedCounselor);
   };
 
-  const counselors = [
-    {
-      id: 1,
-      name: "Gokhan Sigircik",
-      location: "Turkey",
-      src: "https://media.licdn.com/dms/image/C4E03AQFOGCpxF3oHVQ/profile-displayphoto-shrink_800_800/0/1656388466701?e=1682553600&v=beta&t=gEWxp-U8xykoEqJZO3JNYvI5wj_G34K4g194pa7zAb8",
-      alt: "Gokhan Sigircik",
-    },
-    {
-      id: 2,
-      name: "Ethan Smith",
-      location: "Arizona",
-      src: "https://media.licdn.com/dms/image/C5603AQFWzIHj7Ijo2g/profile-displayphoto-shrink_800_800/0/1653944302306?e=1682553600&v=beta&t=4SBjWI3gH5OfT7Sm4-Xe1sWixose0YD9SuFjRZthEgg",
-      alt: "Ethan Smith",
-    },
-    {
-      id: 3,
-      name: "Brandon DeBenedectis",
-      location: "California",
-      src: "https://media.licdn.com/dms/image/D5635AQEJSvwkYb6jrw/profile-framedphoto-shrink_800_800/0/1676223550707?e=1677873600&v=beta&t=TdWJ-46nftzDWfJHeehT9DmXF3WLXgjYhSjWoh0aVAE",
-      alt: "Brandon DeBenedectis",
-    },
-    {
-      id: 4,
-      name: "Joana Grave",
-      location: "Portugal",
-      src: "https://media.licdn.com/dms/image/D5603AQGSRUXV7UZdGg/profile-displayphoto-shrink_400_400/0/1668811669457?e=1682553600&v=beta&t=yY14ue6KYvAKAeHso6C1inNWJHslP7ycuTsMSYPlGdU",
-      alt: "Joana Grave",
-    },
-    {
-      id: 5,
-      name: "Rochelle Beckford",
-      location: "New York",
-      src: "https://media.licdn.com/dms/image/C4E03AQE1av6TQbUFLA/profile-displayphoto-shrink_800_800/0/1657157060858?e=1683158400&v=beta&t=ZwLbOhWoDgiOrfTXHw2F3P8TfVSN0zotPURXf-Ui6k0",
-      alt: "Rochelle Beckford",
-    },
-  ];
 
   return (
     <Container>
@@ -56,7 +64,7 @@ function CounselorDetail() {
         <div className="d-flex">
           <div className="card my-main-card">
             <div className="card-header">
-              <h1>{selectedCounselor.name}</h1>
+              <h1>{selectedCounselor && selectedCounselor.name}</h1>
             </div>
             {selectedCounselor && (
               <img
