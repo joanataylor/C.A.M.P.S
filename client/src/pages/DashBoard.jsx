@@ -2,6 +2,7 @@ import { Paper } from '@mui/material';
 import React, { useState } from 'react'
 import Calendar from '../components/Calendar';
 import wake_boarding from "../images/wake_boarding.jpg"
+import "./styles/calendar.css"
 
 function DashBoard() {
 
@@ -26,10 +27,10 @@ function DashBoard() {
 
                 </Paper>
                 <div className='d-flex flex-column justify-content-between' style={{ maxWidth: "100%" }}>
-                    <Paper>
+                    <Paper className='calendar'>
                         <Calendar setDate={setDate} value={value} setValue={setValue} date={date} />
                     </Paper>
-                    <Paper className='d-flex align-items-center justify-content-between' sx={{ height: "25%" }} style={{ maxHeight: "100%", borderRadius: "4rem", border: "3px #1976d2 solid" }}>
+                    <Paper className='info d-flex align-items-center justify-content-between' sx={{ height: "25%" }} style={{ maxHeight: "100%", borderRadius: "4rem", border: "3px #1976d2 solid" }}>
                         <div style={{ marginLeft: "1rem" }} className="d-flex flex-column">
                             <p>
                                 {date.activity}

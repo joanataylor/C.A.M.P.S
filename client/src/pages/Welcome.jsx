@@ -6,16 +6,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Box } from "@mui/material";
 
-const blankUser = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-};
-
 function Welcome() {
-    const [formUser, setFormUser] = useState({ blankUser });
+    const [formUser, setFormUser] = useState({
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: "",
+        confirm: "",
+    });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,6 +22,31 @@ function Welcome() {
             [name]: value,
         });
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(formUser)
+        fetch("http://localhost:8080/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formUser)
+        }).then((res) => {
+            return res.json()
+        }).then(data => {
+            console.log(data)
+            console.log("New user Created")
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+        setFormUser({
+            first_name: "",
+            last_name: "",
+            email: "",
+            password: "",
+            confirm: "",
+        })
+    }
 
     return (
         <div>
@@ -142,29 +165,29 @@ function Welcome() {
                     <p className="fs-2">Sign Up Now!</p>
                     <div className="d-flex justify-content-center">
                         <div className="m-3">
-                            <label className="form-label" htmlFor="firstName">
+                            <label className="form-label" htmlFor="first_name">
                                 First Name:
                             </label>
                             <br />
                             <input
                                 type="text"
-                                name="firstName"
+                                name="first_name"
                                 id="firstName"
                                 className="form-control"
-                                value={formUser.firstName}
+                                value={formUser.first_name}
                                 onChange={handleChange}
                             ></input>
                             <br />
-                            <label className="form-label" htmlFor="lastName">
+                            <label className="form-label" htmlFor="last_name">
                                 Last Name:
                             </label>
                             <br />
                             <input
                                 type="text"
-                                name="lastName"
+                                name="last_name"
                                 id="lastName"
                                 className="form-control"
-                                value={formUser.lastName}
+                                value={formUser.last_name}
                                 onChange={handleChange}
                             ></input>
                             <br />
@@ -180,7 +203,7 @@ function Welcome() {
                                 value={formUser.email}
                                 onChange={handleChange}
                             ></input>
-                            <div id="emailHelp" class="form-text-secondary">
+                            <div id="emailHelp" className="form-text-secondary">
                                 We'll never share your email with anyone else.
                             </div>
                         </div>
@@ -198,20 +221,20 @@ function Welcome() {
                                 onChange={handleChange}
                             ></input>
                             <br />
-                            <label className="form-label" htmlFor="confirmPassword">
+                            <label className="form-label" htmlFor="confirm">
                                 Confirm Password:
                             </label>
                             <br />
                             <input
                                 type="password"
                                 id="confirmPassword"
-                                name="confirmPassword"
+                                name="confirm"
                                 className="form-control"
-                                value={formUser.confirmPassword}
+                                value={formUser.confirm}
                                 onChange={handleChange}
                             ></input>
                             <br />
-                            <button type="submit" className="btn btn-dark">
+                            <button type="submit" className="btn btn-dark" onClick={handleSubmit}>
                                 Submit
                             </button>
                         </div>
