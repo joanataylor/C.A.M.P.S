@@ -196,7 +196,7 @@ function Welcome() {
                 style={{ backgroundColor: "#1976D2" }}
             >
                 <form>
-                    <p className="fs-2">Sign Up Now!</p>
+                    <p className="fs-2 form-group">Sign Up Now!</p>
                     <div className="d-flex justify-content-center">
                         <div className="m-3">
                             <label className="form-label" htmlFor="first_name">
@@ -276,7 +276,7 @@ function Welcome() {
                 </form>
                 <div>
                     <img
-                        className="h-75 mt-3"
+                        className="h-75 mt-3 img-fluid"
                         src="https://i.imgur.com/BHB6r2Q.png"
                         alt="CCC logo"
                     ></img>
