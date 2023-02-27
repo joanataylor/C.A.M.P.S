@@ -1,5 +1,7 @@
 package com.joana.studentsystem.controllers;
 
+import java.util.List;
+
 import javax.servlet.Registration;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -23,40 +25,49 @@ import com.joana.studentsystem.services.UserService;
 @RestController
 @CrossOrigin
 public class MainController {
-    
-    @Autowired UserService userService;
-    @Autowired ActivityService activityService;
 
-        // Creates a new User
-        @PostMapping("/register")
-        public void register(@RequestBody User user, BindingResult result, HttpSession session) {
-            User newUser = userService.register(user);
-        }
+    @Autowired
+    UserService userService;
+    @Autowired
+    ActivityService activityService;
 
-        @PostMapping("/activity/new")
-        public void newActivity(@RequestBody Activity activity, BindingResult result, HttpSession session) {
-            Activity newActivity = activityService.create(activity);
-        }
-            // Controls returning users and logs them in
+    // Creates a new User
+    @PostMapping("/register")
+    public void register(@RequestBody User user, BindingResult result, HttpSession session) {
+        User newUser = userService.register(user);
+    }
+
+    @PostMapping("/activity/new")
+    public void newActivity(@RequestBody Activity activity, BindingResult result, HttpSession session) {
+        Activity newActivity = activityService.create(activity);
+    }
+
+    @GetMapping("/activity/all")
+    public List<Activity> getAllActivities() {
+        List<Activity> activities = activityService.getall();
+        
+        return activities;
+    }
+
+    // Controls returning users and logs them in
     // @PostMapping("/login")
     // public String login(@RequestBody LoginUser user, BindingResult result) {
-        
 
-    //     User user1 = userService.login(user,result);
-    
-    //     if(result.hasErrors()) {
-    //         return "redirect:/login";
-    //     }
+    // User user1 = userService.login(user,result);
 
-    //     // session.setAttribute("userId", user.getId());
+    // if(result.hasErrors()) {
+    // return "redirect:/login";
+    // }
 
-    //     return "redirect:/landing";
+    // // session.setAttribute("userId", user.getId());
+
+    // return "redirect:/landing";
     // }
 
     // @GetMapping("/logout")
     // public String logout(HttpSession session) {
-    //     session.invalidate();
-    //     return "redirect:/";
+    // session.invalidate();
+    // return "redirect:/";
     // }
 
 }

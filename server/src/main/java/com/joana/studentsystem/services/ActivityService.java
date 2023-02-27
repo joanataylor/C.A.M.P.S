@@ -1,5 +1,7 @@
 package com.joana.studentsystem.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,8 @@ public class ActivityService {
     public Activity create(Activity activity) {
         return activityRepository.save(activity);
     }
-    
+
+    public List<Activity> getall() {
+        return activityRepository.findAll();
+    }
 }
