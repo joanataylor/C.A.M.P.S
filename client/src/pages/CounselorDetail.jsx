@@ -11,15 +11,15 @@ function CounselorDetail() {
     setSelectedImage(selectedImage);
   };
   const counselors = [
-    { name: "Ethan", Location: "Arizona" },
-    { name: "Gokhan", Location: "Turkey" },
-    { name: "Brandon", Location: "California" },
-    { name: "Joana", Location: "Portugal" },
-    { name: "Ethan", Location: "Arizona" },
-    { name: "Gokhan", Location: "Turkey" },
-    { name: "Ethan", Location: "Arizona" },
-    { name: "Brandon", Location: "California" },
-    { name: "Joana", Location: "Portugal" },
+    { name: "Ethan", location: "Arizona" },
+    { name: "Gokhan", location: "Turkey" },
+    { name: "Brandon", location: "California" },
+    { name: "Joana", location: "Portugal" },
+    { name: "Ethan", location: "Arizona" },
+    { name: "Gokhan", location: "Turkey" },
+    { name: "Ethan", location: "Arizona" },
+    { name: "Brandon", location: "California" },
+    { name: "Joana", location: "Portugal" },
     
   ];
 
@@ -112,7 +112,7 @@ function CounselorDetail() {
               />
               <div className="card-body">
                 <h5 className="card-title">{counselor.name}</h5>
-                <p className="card-text">{counselor.Location}</p>
+                <p className="card-text">{counselor.location}</p>
               </div>
               <div
                 className="card-overlay"
