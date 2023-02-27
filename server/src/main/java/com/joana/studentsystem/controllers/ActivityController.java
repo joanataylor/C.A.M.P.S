@@ -10,22 +10,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.joana.studentsystem.services.ActivityService;
 
-// @RestController
-// @RequestMapping("/student")
-// @CrossOrigin
-// public class StudentController {
-//   @Autowired
-//   private StudentService studentService;
 
-//   @PostMapping("/add")
-//   public void add(@RequestBody Student student){
-//     studentService.saveStudent(student);
-//   }
+@RestController
+@RequestMapping("/activity")
+@CrossOrigin
+public class ActivityController {
+    
+    @Autowired ActivityService activityService;
 
-//   @GetMapping("/getAll")
-//   public List<Student> getAllStudents(){
-//     return studentService.getAllStudents();
-//   }
-  
-// }
+
+}

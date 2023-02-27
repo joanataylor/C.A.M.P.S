@@ -11,6 +11,7 @@ function CounselorDetail() {
     setSelectedImage(selectedImage);
   };
   const counselors = [
+
     { name: "Ethan", location: "Arizona" },
     { name: "Gokhan", location: "Turkey" },
     { name: "Brandon", location: "California" },
@@ -20,7 +21,7 @@ function CounselorDetail() {
     { name: "Ethan", location: "Arizona" },
     { name: "Brandon", location: "California" },
     { name: "Joana", location: "Portugal" },
-    
+   
   ];
 
   const images = [

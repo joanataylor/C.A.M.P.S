@@ -14,7 +14,15 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 const logo = require("../images/logo.jpeg")
 
-const pages = ['Activities', 'Dining', 'Gallery'];
+const pages = [
+    {
+        name: 'Activities',
+        route: "/dashboard"
+    },
+    {
+        name: 'Counselors',
+        route: "/counselor"
+    }];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
@@ -54,7 +62,7 @@ function Navbar() {
                             color: 'inherit',
                             textDecoration: 'none',
                         }}
-                        >
+                    >
                         <i class="fa-solid fa-campground"></i>
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -87,8 +95,8 @@ function Navbar() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{page.name}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -114,20 +122,22 @@ function Navbar() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
+                            <a href={page.route}>
+                                <Button
+                                    key={page.name}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {page.name}
+                                </Button>
+                            </a>
                         ))}
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <i class="fa-solid fa-bars" style={{color: "white"}}></i>
+                                <i class="fa-solid fa-bars" style={{ color: "white" }}></i>
                             </IconButton>
                         </Tooltip>
                         <Menu

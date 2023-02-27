@@ -21,7 +21,6 @@ export default function Calendar({ setValue, value, setDate, date }) {
 
     // const [highlightedDays, setHighlightedDays] = React.useState([1, 2, 15]);
     const data = [
-        {},
         {
             date: value.toString().slice(0, 11),
             activity: "Wake Boarding",
@@ -139,14 +138,14 @@ export default function Calendar({ setValue, value, setDate, date }) {
                 value={value}
                 // shouldDisableDate={isWeekend}
                 onChange={(newValue) => {
-                    setValue(newValue);
                     setDate({
                         ...date,
-                        date: newValue.toString().slice(0, 11),
+                        date: newValue.$d.toString().slice(0, 11),
                         activity: data[parseInt(newValue.toString().slice(5,7))] ? data[parseInt(newValue.toString().slice(5,7))].activity: "No Activity Planned Yet",
                         photo: data[parseInt(newValue.toString().slice(5,7))] ? data[parseInt(newValue.toString().slice(5,7))].photo : ""
                     })
-                    console.log(newValue.toString().slice(5,7))
+                    setValue(newValue);
+                    console.log(newValue)
                 }}
 
                 renderInput={(params) => <TextField {...params} fullWidth />}

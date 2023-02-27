@@ -6,7 +6,7 @@ import CounselorDetail from './pages/CounselorDetail';
 import ActivityDetail from './pages/ActivityDetail';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
-import VerticalNavbar from './components/VerticalNavbar';
+import CreateActivity from './pages/CreateActivity';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route path="/dashboard" element={<DashBoard />}/>
         <Route path="/counselor" element={<CounselorDetail />}/>
         <Route path="/activity" element={<ActivityDetail />}/>
-        <Route path="/vertical" element={<VerticalNavbar />}/>
+        <Route path="/newActivity" element={<CreateActivity />}/>
       </Routes>
 
     </div>
