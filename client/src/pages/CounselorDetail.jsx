@@ -20,7 +20,7 @@ function CounselorDetail() {
     { name: "Ethan", Location: "Arizona" },
     { name: "Brandon", Location: "California" },
     { name: "Joana", Location: "Portugal" },
-    
+
   ];
 
   const images = [
