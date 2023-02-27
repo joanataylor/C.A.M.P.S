@@ -147,8 +147,8 @@ function DashBoard() {
                 <Paper className='w-25'>
                     <div className='container' style={{ height: "100%" }}>
                         <p className='h2 text-center'>All Activities</p>
-                        <div style={{ height: "50%", overflow: "scroll" }} className="mt-3">
-                            {activities && activities.map((activity) => {
+                        <div style={{ height: "50%",width: "100%", overflow: "scroll", scrollBehavior: "smooth"}} className="mt-3 scroll">
+                            {activities && data.map((activity) => {
                                 return (
                                     <div key={activity.name} className='d-flex justify-content-between lign-items-center w-75' style={{ margin: "0 auto" }}>
                                         <a href='#'>

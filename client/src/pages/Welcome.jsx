@@ -48,12 +48,12 @@ function Welcome() {
     }
 
     return (
-        <div>
+        <div style={{width: "100%"}}>
             <div
                 id="background image"
                 className="border border-dark mb-2"
                 style={{
-                    backgroundImage: `url("https://i.imgur.com/7I5G9at.jpg")`,
+                    backgroundImage: `url("https://i.imgur.com/7I5G9at.jpg")`
                 }}
             >
                 <div>

@@ -45,7 +45,7 @@ function Navbar() {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar style={{width: "100%"}} position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
