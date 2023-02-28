@@ -170,14 +170,14 @@ function DashBoard() {
     return (
         <div>
             <div className='p-5 d-flex justify-content-around' style={{ height: "75vh", width: "100%"}}>
-                <Paper className='w-25 h-100'>
-                    <div style={{ height: "100%", maxHeight: "100%" }}>
+                <div className='w-25 h-100'>
+                    <Paper className='mb-5' style={{ height: "50%", maxHeight: "100%" }}>
                         <p className='h2 bg-info text-center font-weight-bold p-2'>All Activities</p>
-                        <div style={{ height: "35%", width: "100%", overflow: "scroll", scrollBehavior: "smooth" }} className="mt-3 scroll">
+                        <div style={{ height: "75%", width: "100%", overflow: "scroll", scrollBehavior: "smooth" }} className="mt-3 scroll">
                             {activities ? activities.map((activity) => {
                                 return (
                                     <div key={activity.name} className='d-flex justify-content-between w-75' style={{ margin: "0 auto" }}>
-                                        <a href='#'>
+                                        <a href={`activity/${activity.id}`}>
                                             <h4>{activity.name}</h4>
                                         </a>
                                         <p className='font-weight-bold'>{monthKey[activity.date.slice(5, 7)]} {activity.date.slice(-2)}, {activity.date.slice(0, 4)}</p>
@@ -185,14 +185,16 @@ function DashBoard() {
                                 )
                             }) : ""}
                         </div>
+                    </Paper>
+                    <Paper style={{ height: "50%", maxHeight: "100%" }}>
                         <p className='h2 text-center bg-success font-weight-bold p-2'>All Campers</p>
-                        {campers.length > 0 && <div className='d-flex justify-content-between w-75 h4 pb-2' style={{ margin: "0 auto", borderBottom: "1px solid black" }}>
+                        {campers && <div className='d-flex justify-content-between w-75 h4 pb-2' style={{ margin: "0 auto", borderBottom: "1px solid black" }}>
                             <th>Name</th>
                             <th>From</th>
                         </div>
                         }
-                        <div style={{ height: "28%", width: "100%", overflow: "scroll", scrollBehavior: "smooth" }} className="mt-3 scroll">
-                            {campers.length > 0 ? campers.map((camper) => {
+                        <div style={{ height: "60%", width: "100%", overflow: "scroll", scrollBehavior: "smooth" }} className="mt-3 scroll">
+                            {campers ? campers.map((camper) => {
                                 return (
                                     <div key={camper.first_name} className='d-flex justify-content-between lign-items-center w-75' style={{ margin: "0 auto" }}>
                                         <a href='#'>
@@ -204,8 +206,8 @@ function DashBoard() {
                             }) : ""}
                             
                         </div>
-                    </div>
-                </Paper>
+                    </Paper>
+                </div>
                 <div className='d-flex flex-column justify-content-between' style={{ maxWidth: "100%" }}>
                     <Paper className='calendar'>
                         <Calendar setDate={setDate} value={value} setValue={setValue} date={date} />

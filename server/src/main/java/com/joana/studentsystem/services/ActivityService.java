@@ -21,4 +21,8 @@ public class ActivityService {
     public List<Activity> getall() {
         return activityRepository.findAll();
     }
+
+    public Activity oneActivity(Long Id) {
+        return activityRepository.findById(Id).orElse(null);
+    }
 }

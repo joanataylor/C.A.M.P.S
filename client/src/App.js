@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes ,Route} from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Welcome from './pages/Welcome';
 import DashBoard from './pages/DashBoard';
 import CounselorDetail from './pages/CounselorDetail';
@@ -11,7 +11,7 @@ import Payment from './pages/Payment';
 
 function App() {
   return (
-    <div className="App" style={{width: "100%"}}>
+    <div className="App" style={{ width: "100%" }}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Welcome/>}/>

@@ -7,11 +7,13 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,7 +47,7 @@ public class MainController {
     @GetMapping("/activity/all")
     public List<Activity> getAllActivities() {
         List<Activity> activities = activityService.getall();
-        
+
         return activities;
     }
 
@@ -54,6 +56,12 @@ public class MainController {
         List<User> campers = userService.getUsersByRole();
 
         return campers;
+    }
+
+    @GetMapping("/activity/{id}")
+    public Activity getOneActivity(@PathVariable("id") Long id) {
+        Activity activity = activityService.oneActivity(id);
+        return activity;
     }
     // Controls returning users and logs them in
     // @PostMapping("/login")

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -8,8 +8,24 @@ import Typography from "@mui/material/Typography";
 import VerticalNavbar from "../components/VerticalNavbar";
 import { Container } from "@mui/system";
 import "./styles/activitycard.css";
+import { useParams } from "react-router-dom"
 
 export default function ActivityDetail() {
+
+  const [activity, setActivity] = useState({})
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/activity/${id}`)
+    .then(res => res.json())
+    .then(data => {
+      setActivity(data)
+      console.log(data)
+    })
+    .catch(err => console.log(err))
+  }, [])
+
   return (
     <div className="d-flex flex-row justify-content-between align-items-center">
       <VerticalNavbar />
@@ -23,7 +39,7 @@ export default function ActivityDetail() {
               component="img"
               alt="Water skiing"
               height="250"
-              image="https://images.unsplash.com/photo-1502197882471-6bf45ba0e39d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              image={activity.image}
             />
             <CardContent>
               <Typography
@@ -32,13 +48,10 @@ export default function ActivityDetail() {
                 variant="h5"
                 component="div"
               >
-                Water Skiing
+                {activity.name}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Water skiing is a water sport that involves being towed behind a
-                boat while standing on skis. The skier holds onto a rope
-                attached to the boat and uses the boat's forward motion to glide
-                across the surface of the water.
+                {activity.description}
               </Typography>
             </CardContent>
             <CardActions className="d-flex flex-row justify-content-center align-items-center">
@@ -52,11 +65,11 @@ export default function ActivityDetail() {
           </Card>
 
           <Card className="d-flex flex-column justify-content-between align-items-center">
-            <Typography variant="h5" style={{ color: "red", fontSize: "1.5rem"  }} >
+            <Typography variant="h5" style={{ color: "red", fontSize: "1.5rem" }} >
               <h4><u><b>WHAT WE OFFER</b></u></h4>
             </Typography>
             <CardContent className="d-flex flex-column justify-content-between align-items-center">
-            <Typography variant="h5" style={{ fontSize: "1.2rem" }} gutterBottom
+              <Typography variant="h5" style={{ fontSize: "1.2rem" }} gutterBottom
                 component="div">
                 <u>Family Trips</u>
               </Typography>
