@@ -126,59 +126,23 @@ function Welcome() {
                 </div>
             </div>
             <div className="d-flex justify-content-around ">
-                <Card sx={{ width: 300 }}>
+                <Card sx={{ width: 350 }}>
+                    <CardActionArea>
                         <CardMedia
                             component="img"
                             height="140"
                             image="https://i.imgur.com/chbZMgC.jpg"
-                            alt="Beach Games"
+                            alt="soccer"
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h7" component="div">
+                            <Typography gutterBottom variant="h8" component="div">
                                 Beach Games
                             </Typography>
                         </CardContent>
+                    </CardActionArea>
                 </Card>
-                <Card sx={{ width: 300 }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image="https://i.imgur.com/9Efe946.jpg"
-                            alt="Fishing"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h7" component="div">
-                                Fishing
-                            </Typography>
-                        </CardContent>
-                </Card>
-                <Card sx={{ width: 300 }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image="https://i.imgur.com/KghTggo.jpg"
-                            alt="Water Skiing"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h7" component="div">
-                                Water Skiing
-                            </Typography>
-                        </CardContent>
-                </Card>
-                <Card sx={{ width: 300 }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image="https://i.imgur.com/l9UipTU.jpg"
-                            alt="Paddle Boarding"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h7" component="div">
-                                Paddle Boarding
-                            </Typography>
-                        </CardContent>
-                </Card>
-                <Card sx={{ width: 300 }}>
+                <Card sx={{ width: 350 }}>
+                    <CardActionArea>
                         <CardMedia
                             component="img"
                             height="140"
@@ -186,10 +150,11 @@ function Welcome() {
                             alt="surfing"
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h7" component="div">
+                            <Typography gutterBottom variant="h8" component="div">
                                 Surfing
                             </Typography>
                         </CardContent>
+                    </CardActionArea>
                 </Card>
             </div>
             <div
@@ -197,7 +162,7 @@ function Welcome() {
                 style={{ backgroundColor: "#1976D2" }}
             >
                 <form>
-                    <p className="fs-2 form-group">Sign Up Now!</p>
+                    <p className="fs-2">Sign Up Now!</p>
                     <div className="d-flex justify-content-center">
                         <div className="m-3">
                             <label className="form-label" htmlFor="first_name">
@@ -277,7 +242,7 @@ function Welcome() {
                 </form>
                 <div>
                     <img
-                        className="h-75 mt-3 img-fluid"
+                        className="h-75 mt-3"
                         src="https://i.imgur.com/BHB6r2Q.png"
                         alt="CCC logo"
                     ></img>
