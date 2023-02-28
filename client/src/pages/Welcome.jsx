@@ -48,7 +48,7 @@ function Welcome() {
     }
 
     return (
-        <div className="container-fluid" style={{ backgroundColor: "#e0e0e0" }}>
+        <div style={{ backgroundColor: "#e0e0e0" }}>
             <div
                 id="background image"
                 className=" mb-2"
