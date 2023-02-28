@@ -7,6 +7,7 @@ import ActivityDetail from './pages/ActivityDetail';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import CreateActivity from './pages/CreateActivity';
+import Payment from './pages/Payment';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/counselor" element={<CounselorDetail />}/>
         <Route path="/activity" element={<ActivityDetail />}/>
         <Route path="/newActivity" element={<CreateActivity />}/>
+        <Route path="/payment" element={<Payment />}/>
       </Routes>
 
     </div>
