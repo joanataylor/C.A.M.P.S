@@ -25,8 +25,8 @@ import com.stripe.Stripe;
 import com.stripe.model.PaymentIntent;
 import com.stripe.param.PaymentIntentCreateParams;
 
-// @RestController
-// @CrossOrigin
+@RestController
+@CrossOrigin
 public class Server {
   private static Gson gson = new Gson();
 
