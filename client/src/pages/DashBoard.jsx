@@ -186,13 +186,13 @@ function DashBoard() {
                             }) : ""}
                         </div>
                         <p className='h2 text-center bg-success font-weight-bold p-2'>All Campers</p>
-                        {campers && <div className='d-flex justify-content-between w-75 h4 pb-2' style={{ margin: "0 auto", borderBottom: "1px solid black" }}>
+                        {campers.length > 0 && <div className='d-flex justify-content-between w-75 h4 pb-2' style={{ margin: "0 auto", borderBottom: "1px solid black" }}>
                             <th>Name</th>
                             <th>From</th>
                         </div>
                         }
                         <div style={{ height: "28%", width: "100%", overflow: "scroll", scrollBehavior: "smooth" }} className="mt-3 scroll">
-                            {campers ? campers.map((camper) => {
+                            {campers.length > 0 ? campers.map((camper) => {
                                 return (
                                     <div key={camper.first_name} className='d-flex justify-content-between lign-items-center w-75' style={{ margin: "0 auto" }}>
                                         <a href='#'>
