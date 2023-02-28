@@ -34,10 +34,10 @@ const counselors = [
   },
   {
     id: 5,
-    name: "Rochelle Beckford",
+    name: "Hasan Huda",
     location: "New York",
-    src: "https://media.licdn.com/dms/image/C4E03AQE1av6TQbUFLA/profile-displayphoto-shrink_800_800/0/1657157060858?e=1683158400&v=beta&t=ZwLbOhWoDgiOrfTXHw2F3P8TfVSN0zotPURXf-Ui6k0",
-    alt: "Rochelle Beckford",
+    src: "https://media.licdn.com/dms/image/C4D03AQF7uVV-6fVSDg/profile-displayphoto-shrink_800_800/0/1639594952883?e=1683158400&v=beta&t=_j_5RlcIC2vX4gR41b9O9u-u6exhypxvSVSoO5Jxboo",
+    alt: "Hasan Huda",
   },
   {
     id: 6,
@@ -97,7 +97,7 @@ function CounselorDetail() {
                 alt={counselor.alt}
               />
               <div className="card-body">
-                <h5 className="card-title" name={counselor.name}>{counselor.name}</h5>
+                <h5 className="card-title">{counselor.name}</h5>
                 <p className="card-text">{counselor.location}</p>
               </div>
               <div
