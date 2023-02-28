@@ -10,7 +10,7 @@ import CreateActivity from './pages/CreateActivity';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{width: "100%"}}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Welcome/>}/>

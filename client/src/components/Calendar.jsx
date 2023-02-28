@@ -131,7 +131,7 @@ export default function Calendar({ setValue, value, setDate, date }) {
 
 
     return (
-        <LocalizationProvider dateAdapter={AdapterDayjs} >
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
             <StaticDatePicker
                 orientation="landscape"
                 openTo="day"

@@ -48,12 +48,13 @@ function Welcome() {
     }
 
     return (
+
         <div className="container-fluid" style={{ backgroundColor: "#e0e0e0" }}>
             <div
                 id="background image"
                 className=" mb-2"
                 style={{
-                    backgroundImage: `url("https://i.imgur.com/7I5G9at.jpg")`,
+                    backgroundImage: `url("https://i.imgur.com/7I5G9at.jpg")`
                 }}
             >
                 <div>
