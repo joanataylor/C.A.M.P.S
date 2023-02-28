@@ -18,7 +18,7 @@ function App() {
         <Route path="/login" element={<Login />}/>
         <Route path="/dashboard" element={<DashBoard />}/>
         <Route path="/counselor" element={<CounselorDetail />}/>
-        <Route path="/activity" element={<ActivityDetail />}/>
+        <Route path="/activity/:id" element={<ActivityDetail />}/>
         <Route path="/newActivity" element={<CreateActivity />}/>
         <Route path="/payment" element={<Payment />}/>
       </Routes>
