@@ -49,6 +49,12 @@ public class MainController {
         return activities;
     }
 
+    @GetMapping("/campers/all")
+    public List<User> getAllCampers() {
+        List<User> campers = userService.getUsersByRole();
+
+        return campers;
+    }
     // Controls returning users and logs them in
     // @PostMapping("/login")
     // public String login(@RequestBody LoginUser user, BindingResult result) {

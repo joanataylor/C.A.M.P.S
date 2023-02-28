@@ -1,5 +1,6 @@
 package com.joana.studentsystem.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -58,6 +59,10 @@ public class UserService {
             }
         }
         return loginUser;
+    }
+
+    public List<User> getUsersByRole() {
+        return userRepository.findByRoles("camper");
     }
 
 }
