@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import CreateActivity from './pages/CreateActivity';
 import Payment from './pages/Payment';
+import MoreInfo from './pages/MoreInfo';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/activity/:id" element={<ActivityDetail />}/>
         <Route path="/newActivity" element={<CreateActivity />}/>
         <Route path="/payment" element={<Payment />}/>
+        <Route path="/moreInfo" element={<MoreInfo />}/>
       </Routes>
 
     </div>

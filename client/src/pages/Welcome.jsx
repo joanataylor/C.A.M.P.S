@@ -3,7 +3,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Box } from "@mui/material";
 
 function Welcome() {
     const [formUser, setFormUser] = useState({
@@ -57,7 +56,7 @@ function Welcome() {
                 }}
             >
                 <div>
-                    <img className="mt-2" src="https://i.imgur.com/WCCbsbP.png"></img>
+                    <img className="mt-2" src="https://i.imgur.com/WCCbsbP.png" alt="CCC Logo"></img>
                 </div>
                 <div className="d-flex justify-content-center">
                     <div className="mt-3 w-a175 mb-5">
