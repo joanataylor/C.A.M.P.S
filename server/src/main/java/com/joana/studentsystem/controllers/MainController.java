@@ -63,6 +63,12 @@ public class MainController {
         Activity activity = activityService.oneActivity(id);
         return activity;
     }
+
+    @GetMapping("/activity/current/{date}")
+    public Activity getActivityByDate(@PathVariable("date") String date) {
+        Activity activity = activityService.findByDate(date);
+        return activity;
+    }
     // Controls returning users and logs them in
     // @PostMapping("/login")
     // public String login(@RequestBody LoginUser user, BindingResult result) {

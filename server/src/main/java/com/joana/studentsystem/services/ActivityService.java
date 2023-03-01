@@ -25,4 +25,8 @@ public class ActivityService {
     public Activity oneActivity(Long Id) {
         return activityRepository.findById(Id).orElse(null);
     }
+
+    public Activity findByDate(String date) {
+        return activityRepository.findUserByDate(date).orElse(null);
+    }
 }

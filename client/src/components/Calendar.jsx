@@ -17,7 +17,7 @@ import snow from "../images/snow.jpg"
 //     return day === 0 || day === 6;
 // };
 
-export default function Calendar({ setValue, value, setDate, date }) {
+export default function Calendar({ setValue, value, setDate, date, setPostedActivity }) {
 
     // const [highlightedDays, setHighlightedDays] = React.useState([1, 2, 15]);
     const data = [
@@ -81,7 +81,7 @@ export default function Calendar({ setValue, value, setDate, date }) {
             activity: "Wake Boarding",
             photo: wake_boarding
         },
-        
+
         {
             date: value.toString().slice(0, 11),
             activity: "Wake Boarding",
@@ -130,6 +130,21 @@ export default function Calendar({ setValue, value, setDate, date }) {
     ]
 
 
+    const numKey = {
+        "Jan": "01",
+        "Feb": "02",
+        "Mar": "03",
+        "Apr": "04",
+        "May": "05",
+        "June": "06",
+        "Jul": "07",
+        "Aug": "08",
+        "Sep": "09",
+        "Oct": "10",
+        "Nov": "11",
+        "Dec": "12",
+    }
+
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <StaticDatePicker
@@ -138,34 +153,37 @@ export default function Calendar({ setValue, value, setDate, date }) {
                 value={value}
                 // shouldDisableDate={isWeekend}
                 onChange={(newValue) => {
-                    setDate({
-                        ...date,
-                        date: newValue.$d.toString().slice(0, 11),
-                        activity: data[parseInt(newValue.toString().slice(5,7))] ? data[parseInt(newValue.toString().slice(5,7))].activity: "No Activity Planned Yet",
-                        photo: data[parseInt(newValue.toString().slice(5,7))] ? data[parseInt(newValue.toString().slice(5,7))].photo : ""
-                    })
+                    const currentDate = newValue.$d.toString().slice(4, 15)
+                    const dateString = `${currentDate.slice(-4)}-${numKey[currentDate.slice(0, 3)]}-${currentDate.slice(4, 6)}`
+                    fetch(`http://localhost:8080/activity/current/${dateString}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            setPostedActivity(data)
+                        }).catch((err) => {
+                            setPostedActivity()
+                        })
                     setValue(newValue);
-                    console.log(newValue)
                 }}
 
                 renderInput={(params) => <TextField {...params} fullWidth />}
-                // renderDay={(day, _value, DayComponentProps) => {
-                //     const isSelected =
-                //         !DayComponentProps.outsideCurrentMonth &&
-                //         highlightedDays.indexOf(day.date()) >= 0;
+            // renderDay={(day, _value, DayComponentProps) => {
+            //     const isSelected =
+            //         !DayComponentProps.outsideCurrentMonth &&
+            //         highlightedDays.indexOf(day.date()) >= 0;
 
-                //     return (
-                //         <Badge
-                //             key={day.toString()}
-                //             overlap="circular"
-                //             badgeContent={isSelected ? '🌚' : undefined}
+            //     return (
+            //         <Badge
+            //             key={day.toString()}
+            //             overlap="circular"
+            //             badgeContent={isSelected ? '🌚' : undefined}
 
-                //         >
+            //         >
 
-                //             <PickersDay {...DayComponentProps} name={day.toString().slice(5, 7)} onClick={() => console.log(day.toString().slice(0, 11))} />
-                //         </Badge>
-                //     );
-                // }}
+            //             <PickersDay {...DayComponentProps} name={day.toString().slice(5, 7)} onClick={() => console.log(day.toString().slice(0, 11))} />
+            //         </Badge>
+            //     );
+            // }}
             />
         </LocalizationProvider>
     );
