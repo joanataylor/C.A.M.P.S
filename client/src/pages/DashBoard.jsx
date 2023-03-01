@@ -234,7 +234,7 @@ function DashBoard() {
                     </Paper>
                     <Paper style={{ height: "50%", maxHeight: "100%" }}>
                         <p className='h2 text-center bg-success font-weight-bold p-2'>All Campers</p>
-                        {campers && <div className='d-flex justify-content-between w-75 h4 pb-2' style={{ margin: "0 auto", borderBottom: "1px solid black" }}>
+                        {campers.length > 0 && <div className='d-flex justify-content-between w-75 h4 pb-2' style={{ margin: "0 auto", borderBottom: "1px solid black" }}>
                             <div>Name</div>
                             <div>From</div>
                         </div>

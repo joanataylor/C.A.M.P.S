@@ -42,7 +42,7 @@ export default function ActivityDetail() {
       <VerticalNavbar />
       <div className="mx-auto">
         <Container className="d-flex justify-content-between ml-4">
-          <Card sx={{ maxWidth: 355, backgroundColor: "#1876d2", }}>
+          <Card >
             <h3 className="d-flex flex-row justify-content-center align-items-center">
               Activity Details
             </h3>
