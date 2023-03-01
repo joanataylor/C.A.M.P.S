@@ -26,7 +26,6 @@ import com.stripe.model.PaymentIntent;
 import com.stripe.param.PaymentIntentCreateParams;
 
 @RestController
-@CrossOrigin
 public class Server {
   private static Gson gson = new Gson();
 
@@ -60,7 +59,7 @@ public class Server {
     // This is a public sample test API key.
     // Don’t submit any personally identifiable information in requests made with this key.
     // Sign in to see your own test API key embedded in code samples.
-    Stripe.apiKey = "sk_test_51MWngsEnyGDuL2I4jHjEKAJEIskiaPV3FJ3CbbjGIMkdvxsdtbqOPFvgHIAdkJXXkiNcISQreiN6bSsF9RlotJeQ00ZBoUMe23";
+    // Stripe.apiKey = "sk_test_51MWngsEnyGDuL2I4jHjEKAJEIskiaPV3FJ3CbbjGIMkdvxsdtbqOPFvgHIAdkJXXkiNcISQreiN6bSsF9RlotJeQ00ZBoUMe23";
 
     post("/create-payment-intent", (request, response) -> {
       response.type("application/json");
