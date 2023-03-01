@@ -1,12 +1,9 @@
 import React, { useState } from "react";
+import beach from "../images/beach.jpg";
+import surfboard from "../images/surfboards.jpg";
 
 function MoreInfo() {
   const [formUser, setFormUser] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: "",
-    confirm: "",
     city: "",
     state: "",
     fun_fact: "",
@@ -40,11 +37,6 @@ function MoreInfo() {
         console.log(err);
       });
     setFormUser({
-      first_name: "",
-      last_name: "",
-      email: "",
-      password: "",
-      confirm: "",
       city: "",
       state: "",
       fun_fact: "",
@@ -53,94 +45,74 @@ function MoreInfo() {
   };
 
   return (
-
-    <div className="container w-100 mt-3 p-3" style={{ backgroundImage: `url("https://i.imgur.com/Nb9ldM4.jpg")`,  backgroundRepeat: 'no-repeat',
-    width:'350px'}} >
-      <div className="container w-50 mt-3 shadow p-3 mb-5 bg-white rounded">
-        <form>
-        <div className="form-group">
-          <p className="fs-2 form-group">Edit User Information</p>
-            <label className="form-label" htmlFor="first_name">
-              First Name:
+    <div
+      className="container-fluid d-flex align-items-center"
+      style={{
+        minHeight: "92.6vh",
+        padding: "0 25rem",
+        backgroundSize : "cover",
+        backgroundImage: `url(https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) `,
+      }}
+    >
+      {/* <img
+        className="img-fluid w-50"
+        src={beach}
+        style={{ height: "80vh" }}
+        alt="Beach"
+      ></img> */}
+      <div className="container shadow p-3 bg-white rounded w-50 h-50"  style={{}}>
+        <p className="fs-5">
+          Welcome, for a more personalized experience please tell us a little
+          more about yourself:
+        </p>
+        <form >
+          <div className="form-group">
+            <label className="form-label" htmlFor="city">
+              City:
             </label>
-            <br />
             <input
               type="text"
-              name="first_name"
-              id="firstName"
+              name="city"
+              id="city"
               className="form-control"
-              value={formUser.first_name}
+              value={formUser.city}
               onChange={handleChange}
             ></input>
-            <br />
-            <label className="form-label" htmlFor="last_name">
-              Last Name:
-            </label>
-            <br />
-            <input
-              type="text"
-              name="last_name"
-              id="lastName"
-              className="form-control"
-              value={formUser.last_name}
-              onChange={handleChange}
-            ></input>
-            <br />
-            <label className="form-label" htmlFor="email">
-              Email Address:
-            </label>
-            <br />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="form-control"
-              value={formUser.email}
-              onChange={handleChange}
-            ></input>
-            <br />
-            <div>
-              <label className="form-label" htmlFor="city">
-                City:
-                <input
-                  type="text"
-                  name="city"
-                  id="city"
-                  className="form-control"
-                  value={formUser.city}
-                  onChange={handleChange}
-                ></input>
-              </label>
-              <br />
-              <label className="form-label" htmlFor="state">
-                State:
-                <input
-                  type="text"
-                  name="state"
-                  id="state"
-                  className="form-control"
-                  value={formUser.state}
-                  onChange={handleChange}
-                ></input>
-              </label>
-              <br />
-              <label className="form-label" htmlFor="fun_fact">
-                Fun Fact About Yourself:
-                <textarea
-                  type="textarea"
-                  name="fun_fact"
-                  id="fun_fact"
-                  className="form-control"
-                  value={formUser.fun_fact}
-                  onChange={handleChange}
-                ></textarea>
-              </label>
-              <br />
-            </div>
-            <button type="submit" className="btn text-white" onClick={handleSubmit} style={{ backgroundColor: "#1976D2" }}>
-              Submit
-            </button>
           </div>
+          <div className="form-group">
+            <label className="form-label" htmlFor="state">
+              State:
+            </label>
+            <input
+              type="text"
+              name="state"
+              id="state"
+              className="form-control"
+              value={formUser.state}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label" htmlFor="fun_fact">
+              Fun Fact About Yourself:
+            </label>
+            <textarea
+              type="textarea"
+              name="fun_fact"
+              id="fun_fact"
+              className="form-control"
+              value={formUser.fun_fact}
+              onChange={handleChange}
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="btn text-white"
+            onClick={handleSubmit}
+            style={{ backgroundColor: "#1976D2" }}
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
