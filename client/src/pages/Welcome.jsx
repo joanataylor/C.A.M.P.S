@@ -28,12 +28,13 @@ function Welcome() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formUser)
-        }).then((res) => {
-            return res.json()
-        }).then(data => {
-            console.log(data)
-            console.log("New user Created")
-        })
+        }).then((res) => res.json())
+            .then(data => {
+                console.log(data)
+                console.log("New user Created")
+                console.log(formUser.email)
+                window.location.href = `moreinfo/${formUser.email}`
+            })
             .catch((err) => {
                 console.log(err)
             })

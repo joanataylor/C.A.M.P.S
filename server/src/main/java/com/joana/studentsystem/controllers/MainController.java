@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,25 +31,11 @@ public class MainController {
 
     @Autowired
     UserService userService;
-    @Autowired
-    ActivityService activityService;
 
     // Creates a new User
     @PostMapping("/register")
     public void register(@RequestBody User user, BindingResult result, HttpSession session) {
         User newUser = userService.register(user);
-    }
-
-    @PostMapping("/activity/new")
-    public void newActivity(@RequestBody Activity activity, BindingResult result, HttpSession session) {
-        Activity newActivity = activityService.create(activity);
-    }
-
-    @GetMapping("/activity/all")
-    public List<Activity> getAllActivities() {
-        List<Activity> activities = activityService.getall();
-
-        return activities;
     }
 
     @GetMapping("/campers/all")
@@ -58,17 +45,19 @@ public class MainController {
         return campers;
     }
 
-    @GetMapping("/activity/{id}")
-    public Activity getOneActivity(@PathVariable("id") Long id) {
-        Activity activity = activityService.oneActivity(id);
-        return activity;
+    @PostMapping("/campers/{email}")
+    public User updateCamper(@RequestBody User user, @PathVariable("email")String email) {
+        User camper = userService.findByEmail(email);
+
+        camper.setCity(user.getCity());
+        camper.setState(user.getState());
+        camper.setFun_fact(user.getFun_fact());
+        System.out.println(camper);
+        User newCamper  = userService.updateCamper(camper);
+
+        return newCamper;
     }
 
-    @GetMapping("/activity/current/{date}")
-    public Activity getActivityByDate(@PathVariable("date") String date) {
-        Activity activity = activityService.findByDate(date);
-        return activity;
-    }
     // Controls returning users and logs them in
     // @PostMapping("/login")
     // public String login(@RequestBody LoginUser user, BindingResult result) {

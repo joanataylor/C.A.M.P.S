@@ -23,6 +23,10 @@ public class UserService {
         return user;
     }
 
+    public User findByEmail(String email){
+        return userRepository.findByEmail(email).orElse(null);
+    }
+
     // TO-DO: Write register and login methods!
     public User register(User newUser) {
         // Optional<User> user = userRepository.findByEmail(newUser.getEmail());
@@ -63,6 +67,10 @@ public class UserService {
 
     public List<User> getUsersByRole() {
         return userRepository.findByRoles("camper");
+    }
+
+    public User updateCamper(User camper) {
+        return userRepository.save(camper);
     }
 
 }
