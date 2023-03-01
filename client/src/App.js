@@ -22,7 +22,7 @@ function App() {
         <Route path="/activity/:id" element={<ActivityDetail />}/>
         <Route path="/newActivity" element={<CreateActivity />}/>
         <Route path="/payment" element={<Payment />}/>
-        <Route path="/moreInfo" element={<MoreInfo />}/>
+        <Route path="/moreInfo/:id" element={<MoreInfo />}/>
       </Routes>
 
     </div>

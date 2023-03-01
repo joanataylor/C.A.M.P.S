@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import beach from "../images/beach.jpg";
 import surfboard from "../images/surfboards.jpg";
+import { useParams } from "react-router-dom";
 
 function MoreInfo() {
+  const { email } = useParams();
+
   const [formUser, setFormUser] = useState({
     city: "",
     state: "",
@@ -21,7 +24,7 @@ function MoreInfo() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formUser);
-    fetch("http://localhost:8080/update/{id}", {
+    fetch(`http://localhost:8080/campers/${email}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formUser),
@@ -30,7 +33,7 @@ function MoreInfo() {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
+        console.log(data.message);
         console.log("New info Created");
       })
       .catch((err) => {
@@ -46,11 +49,11 @@ function MoreInfo() {
 
   return (
     <div
-      className="container-fluid d-flex align-items-center"
+      className="container-fluid d-flex align-items-center justify-content-center"
       style={{
         minHeight: "92.6vh",
         padding: "0 25rem",
-        backgroundSize : "cover",
+        backgroundSize: "cover",
         backgroundImage: `url(https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) `,
       }}
     >
@@ -60,12 +63,14 @@ function MoreInfo() {
         style={{ height: "80vh" }}
         alt="Beach"
       ></img> */}
-      <div className="container shadow p-3 bg-white rounded w-50 h-50"  style={{}}>
+      <div className="container d-flex flex-column shadow p-3 bg-white rounded w-50 h-50" style={{}}>
         <p className="fs-5">
           Welcome, for a more personalized experience please tell us a little
           more about yourself:
         </p>
         <form >
+          {/* <form:hidden path="user" value="${userId}"></form:hidden> */}
+          <input type="hidden" name="_method" value="put" />
           <div className="form-group">
             <label className="form-label" htmlFor="city">
               City:
