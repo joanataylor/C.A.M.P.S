@@ -26,11 +26,23 @@ export default function ActivityDetail() {
   }, [id])
 
   return (
-    <div className="d-flex flex-row justify-content-between align-items-center">
+    <div className="d-flex flex-row justify-content-between align-items-center"
+
+    // style={{
+    //   minHeight: "92.6vh",
+    //   padding: "0 25rem",
+    //   backgroundSize : "cover",
+    //   backgroundImage: `url(https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) `,
+    // }}
+    
+    
+    
+    
+    >
       <VerticalNavbar />
       <div className="mx-auto">
         <Container className="d-flex justify-content-between ml-4">
-          <Card sx={{ maxWidth: 355 }}>
+          <Card sx={{ maxWidth: 355, backgroundColor: "#1876d2", }}>
             <h3 className="d-flex flex-row justify-content-center align-items-center">
               Activity Details
             </h3>
@@ -57,19 +69,16 @@ export default function ActivityDetail() {
             </CardActions>
           </Card>
 
-          <Card sx={{ maxWidth: 355, maxHeight: 300, }}>
+          <Card sx={{ maxWidth: 355, maxHeight: 300, backgroundColor: "#1876d2",}}>
             <CardContent>
-
             <Typography variant="body2" color="text.primary">
-            <Typography variant="h4" sx={{ mb: 2, fontSize: "18px" }}>
+            <Typography variant="h4" sx={{ mb: 2, fontSize: "18px", }}>
               Location
             </Typography>
             </Typography>
-
               <Typography variant="body2" color="text.secondary">
                 {activity.location}
               </Typography>
-
               <Typography variant="body2" color="text.primary">
               <Typography variant="h4" sx={{ mb:2, fontSize: "18px" }}>
                 Duration
@@ -78,7 +87,6 @@ export default function ActivityDetail() {
               <Typography variant="body2" color="text.secondary">
                 {activity.duration}
               </Typography>
-
               <Typography variant="body2" color="text.primary">
               <Typography variant="h4" sx={{ mb: 2, fontSize: "18px" }}>
                 Items
@@ -87,7 +95,6 @@ export default function ActivityDetail() {
               <Typography variant="body2" color="text.secondary">
                 {activity.items}
               </Typography>
-
               <Typography variant="body2" color="text.primary">
               <Typography variant="h4" sx={{ mb: 2, fontSize: "18px" }}>
                 Date
@@ -96,7 +103,6 @@ export default function ActivityDetail() {
             <Typography variant="body2" color="text.secondary">
               {activity.date}
             </Typography>
-
             </CardContent>
           </Card>
         </Container>
