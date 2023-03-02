@@ -17,96 +17,93 @@ export default function ActivityDetail() {
 
   useEffect(() => {
     fetch(`http://localhost:8080/activity/${id}`)
-    .then(res => res.json())
-    .then(data => {
-      setActivity(data)
-      console.log(data)
-    })
-    .catch(err => console.log(err))
+      .then(res => res.json())
+      .then(data => {
+        setActivity(data)
+        console.log(data)
+      })
+      .catch(err => console.log(err))
   }, [id])
 
   return (
     <div className="d-flex flex-row justify-content-between align-items-center"
 
-    // style={{
-    //   minHeight: "92.6vh",
-    //   padding: "0 25rem",
-    //   backgroundSize : "cover",
-    //   backgroundImage: `url(https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) `,
-    // }}
-    
-    
-    
-    
+      style={{
+        minHeight: "92.65vh",
+        backgroundSize: "cover",
+        backgroundImage: `url(https://i.imgur.com/iDOjNPh.jpg) `,
+      }}
+
+
+
+
     >
       <VerticalNavbar />
-      <div className="mx-auto">
-        <Container className="d-flex justify-content-between ml-4">
-          <Card >
-            <h3 className="d-flex flex-row justify-content-center align-items-center">
-              Activity Details
-            </h3>
-            <CardMedia
-              component="img"
-              alt="Water skiing"
-              height="250"
-              image={activity.image}
-            />
-            <CardContent>
-              <Typography
-                className="d-flex flex-row justify-content-center align-items-center"
-                gutterBottom
-                variant="h5"
-                component="div"
-              >
-                {activity.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {activity.description}
-              </Typography>
-            </CardContent>
-            <CardActions className="d-flex flex-row justify-content-center align-items-center">
-            </CardActions>
-          </Card>
+      <Container className="d-flex justify-content-between align-items-center mx-auto p-5" >
+        <Card className="h-100 shadow-lg rounded border border-dark" style={{ maxWidth: "45%", backgroundColor: "#e0e0e0" }} >
+          <h2 className="d-flex flex-row justify-content-center align-items-center" >
+            Activity Details
+          </h2>
+          <CardMedia
+            component="img"
+            alt="Water skiing"
+            height="300"
+            image={activity.image}
+          />
+          <CardContent>
+            <Typography
+              className="d-flex flex-row justify-content-center align-items-center"
+              gutterBottom
+              variant="body1 h2"
+              component="div"
+            >
+              {activity.name}
+            </Typography>
+            <Typography variant="h5" className="mb-4" color="text.secondary">
+              {activity.description}
+            </Typography>
+          </CardContent>
+          <CardActions className="d-flex flex-row justify-content-center align-items-center">
+          </CardActions>
+        </Card>
 
-          <Card sx={{ maxWidth: 355, maxHeight: 300, backgroundColor: "#1876d2",}}>
-            <CardContent>
-            <Typography variant="body2" color="text.primary">
-            <Typography variant="h4" sx={{ mb: 2, fontSize: "18px", }}>
-              Location
-            </Typography>
-            </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {activity.location}
+        <Card className="h-100 shadow-lg rounded border border-dark" style={{ width: "45%", backgroundColor: "#e0e0e0", }}>
+          <CardContent className="d-flex flex-column justify-content-between ">
+            <Typography variant="body1" color="text.primary">
+              <Typography variant="h4" sx={{ mb: 2, fontSize: "2rem", }}>
+                Location
               </Typography>
-              <Typography variant="body2" color="text.primary">
-              <Typography variant="h4" sx={{ mb:2, fontSize: "18px" }}>
+            </Typography>
+            <Typography variant="h5" className="mb-4" color="text.secondary">
+              {activity.location}
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              <Typography variant="h4" sx={{ mb: 2, fontSize: "2rem" }}>
                 Duration
               </Typography>
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {activity.duration}
-              </Typography>
-              <Typography variant="body2" color="text.primary">
-              <Typography variant="h4" sx={{ mb: 2, fontSize: "18px" }}>
+            </Typography>
+            <Typography variant="h5" className="mb-4" color="text.secondary">
+              {activity.duration}
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              <Typography variant="h4" sx={{ mb: 2, fontSize: "2rem" }}>
                 Items
-                </Typography>
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {activity.items}
-              </Typography>
-              <Typography variant="body2" color="text.primary">
-              <Typography variant="h4" sx={{ mb: 2, fontSize: "18px" }}>
+            </Typography>
+            <Typography variant="h5" className="mb-4" color="text.secondary">
+              {activity.items}
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              <Typography variant="h4" sx={{ mb: 2, fontSize: "2rem" }}>
                 Date
               </Typography>
-              </Typography>
-            <Typography variant="body2" color="text.secondary">
+            </Typography>
+            <Typography variant="h5" className="mb-4" color="text.secondary">
               {activity.date}
             </Typography>
-            </CardContent>
-          </Card>
-        </Container>
-      </div>
+          </CardContent>
+        </Card>
+      </Container>
     </div>
   );
 }

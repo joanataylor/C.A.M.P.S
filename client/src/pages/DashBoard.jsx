@@ -215,10 +215,14 @@ function DashBoard() {
 
     return (
         <div>
-            <div className='p-5 d-flex justify-content-around' style={{ height: "75vh", width: "100%" }}>
+            <div className='p-5 d-flex justify-content-around' style={{
+                height: "75vh", width: "100%", minHeight: "92.66vh",
+                backgroundSize: "cover",
+                backgroundImage: `url(https://i.imgur.com/79JNXwV.jpg) `,
+            }}>
                 <div className='w-25 h-100'>
-                    <Paper className='mb-5' style={{ height: "50%", maxHeight: "100%" }}>
-                        <p className='h2 bg-info text-center font-weight-bold p-2'>All Activities</p>
+                    <Paper className='mb-5 shadow-lg border border-dark' style={{ height: "50%", maxHeight: "100%", borderRadius: "3rem" }}>
+                        <p className='h2 bg-info text-center font-weight-bold p-2 border border-dark' style={{ borderRadius: "3rem 3rem 0 0 " }}>All Activities</p>
                         <div style={{ height: "75%", width: "100%", overflow: "scroll", scrollBehavior: "smooth" }} className="mt-3 scroll">
                             {activities ? activities.map((activity) => {
                                 return (
@@ -232,8 +236,8 @@ function DashBoard() {
                             }) : ""}
                         </div>
                     </Paper>
-                    <Paper style={{ height: "50%", maxHeight: "100%" }}>
-                        <p className='h2 text-center bg-success font-weight-bold p-2'>All Campers</p>
+                    <Paper className='border border-dark ' style={{ height: "50%", maxHeight: "100%", borderRadius: "3rem" }}>
+                        <p className='h2 text-center bg-success font-weight-bold p-2 border border-dark' style={{ borderRadius: "3rem 3rem 0 0" }}>All Campers</p>
                         {campers.length > 0 && <div className='d-flex justify-content-between w-75 h4 pb-2' style={{ margin: "0 auto", borderBottom: "1px solid black" }}>
                             <div>Name</div>
                             <div>From</div>
@@ -255,7 +259,7 @@ function DashBoard() {
                     </Paper>
                 </div>
                 <div className='d-flex flex-column justify-content-between' style={{ maxWidth: "100%" }}>
-                    <Paper className='calendar'>
+                    <Paper className='calendar border border-dark'>
                         <Calendar setDate={setDate} value={value} setValue={setValue} date={date} setPostedActivity={setPostedActivity} />
                     </Paper>
                     {postedActivity ? <Paper className='info d-flex align-items-center justify-content-between' sx={{ height: "25%" }} style={{ maxHeight: "100%", borderRadius: "4rem", border: "3px #1976d2 solid" }}>
@@ -264,7 +268,7 @@ function DashBoard() {
                                 {postedActivity.name}
                             </p>
                             <p>
-                            {` ${monthKey[postedActivity.date.slice(5,7)]} ${postedActivity.date.slice(8)}, ${postedActivity.date.slice(0,4)}`}
+                                {` ${monthKey[postedActivity.date.slice(5, 7)]} ${postedActivity.date.slice(8)}, ${postedActivity.date.slice(0, 4)}`}
                             </p>
                         </div>
                         <a href={`/activity/${postedActivity.id}`}>More Info</a>
