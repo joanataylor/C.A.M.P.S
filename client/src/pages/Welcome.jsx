@@ -33,10 +33,11 @@ function Welcome() {
                 console.log(data)
                 console.log("New user Created")
                 console.log(formUser.email)
-                window.location.href = `moreinfo/${formUser.email}`
             })
             .catch((err) => {
+                // console.log(correctEmail)
                 console.log(err)
+                window.location.href = `moreinfo/${formUser.email}` 
             })
         setFormUser({
             first_name: "",
@@ -50,7 +51,7 @@ function Welcome() {
     return (
         <div style={{ backgroundColor: "#e0e0e0" }}>
             <div
-                id="background image"
+                id="background-image"
                 className=" mb-2"
                 style={{
                     backgroundImage: `url("https://i.imgur.com/7I5G9at.jpg")`,

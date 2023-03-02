@@ -52,7 +52,7 @@ public class MainController {
         camper.setCity(user.getCity());
         camper.setState(user.getState());
         camper.setFun_fact(user.getFun_fact());
-        System.out.println(camper);
+        camper.setRoles(user.getRoles());
         User newCamper  = userService.updateCamper(camper);
 
         return newCamper;

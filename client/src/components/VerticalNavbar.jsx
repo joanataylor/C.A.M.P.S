@@ -4,7 +4,7 @@ import { VerticalBarData } from "./VerticalBarData";
 
 function VerticalNavbar() {
     return (
-        <div className="VerticalBar">
+        <div className="VerticalBar" style={{height: "92.65vh"}}>
             <ul className="VerticalbarList">
                 {VerticalBarData.map((val, key) => {
                     return (

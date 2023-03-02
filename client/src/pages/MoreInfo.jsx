@@ -4,7 +4,7 @@ import surfboard from "../images/surfboards.jpg";
 import { useParams } from "react-router-dom";
 
 function MoreInfo() {
-  const { email } = useParams();
+  const { id } = useParams();
 
   const [formUser, setFormUser] = useState({
     city: "",
@@ -24,7 +24,7 @@ function MoreInfo() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formUser);
-    fetch(`http://localhost:8080/campers/${email}`, {
+    fetch(`http://localhost:8080/campers/${id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formUser),
@@ -35,6 +35,7 @@ function MoreInfo() {
       .then((data) => {
         console.log(data.message);
         console.log("New info Created");
+        window.location.pathname = "/dashboard"
       })
       .catch((err) => {
         console.log(err);
@@ -63,7 +64,7 @@ function MoreInfo() {
         style={{ height: "80vh" }}
         alt="Beach"
       ></img> */}
-      <div className="container d-flex flex-column shadow p-3 bg-white rounded w-50 h-50" style={{}}>
+      <div className="container d-flex flex-column shadow p-3 bg-white rounded w-50 h-50 border border-dark" >
         <p className="fs-5">
           Welcome, for a more personalized experience please tell us a little
           more about yourself:
