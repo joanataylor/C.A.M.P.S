@@ -7,19 +7,19 @@ import brandonchased from "../images/brandonchased.jpg"
 const counselors = [
   {
     id: 1,
-    name: "Gokhan",
-    location: "Turkey",
-    src: "https://media.licdn.com/dms/image/C4E03AQFOGCpxF3oHVQ/profile-displayphoto-shrink_800_800/0/1656388466701?e=1682553600&v=beta&t=gEWxp-U8xykoEqJZO3JNYvI5wj_G34K4g194pa7zAb8",
-    alt: "Gokhan",
-    description: "Gokhan is like a walking ATM, except instead of dispensing cash, he just has an endless supply of it. He's always flashing that pearly-white, almost-perfect smile of his, which some might suspect is just a veneer he bought with all that cash. But little do they know, Gokhan is secretly a YouTube sensation, posting videos of himself scarfing down kebaps and making it rain cash on unsuspecting strangers. He used to be a web developer, but now he's a camp counselor, because apparently nothing brings him more joy than watching kids try to catch fireflies while he eats his weight in lamb skewers. Gokhan's motto in life? 'Money can't buy happiness, but it sure can buy a lot of kebap.'"
-  },
-  {
-    id: 2,
     name: "Ethan",
     location: "Costa Rica",
     src: "https://media.licdn.com/dms/image/C5603AQFWzIHj7Ijo2g/profile-displayphoto-shrink_800_800/0/1653944302306?e=1682553600&v=beta&t=4SBjWI3gH5OfT7Sm4-Xe1sWixose0YD9SuFjRZthEgg",
     alt: "Ethan",
     description: "Meet Ethan, the ultimate jack-of-all-trades! He's been a nurse, a scientist, and even a web developer - but now he's decided to switch things up and become a camp counselor. Maybe he figured it was time to stop diagnosing viruses and start dealing with the mosquito kind. Either way, he's ready to bring his scientific precision, medical expertise, and coding finesse to the great outdoors. Let's just hope he knows how to start a campfire!"
+  },
+  {
+    id: 2,
+    name: "Gokhan",
+    location: "Turkey",
+    src: "https://media.licdn.com/dms/image/C4E03AQFOGCpxF3oHVQ/profile-displayphoto-shrink_800_800/0/1656388466701?e=1682553600&v=beta&t=gEWxp-U8xykoEqJZO3JNYvI5wj_G34K4g194pa7zAb8",
+    alt: "Gokhan",
+    description: "Gokhan is like a walking ATM, except instead of dispensing cash, he just has an endless supply of it. He's always flashing that pearly-white, almost-perfect smile of his, which some might suspect is just a veneer he bought with all that cash. But little do they know, Gokhan is secretly a YouTube sensation, posting videos of himself scarfing down kebaps and making it rain cash on unsuspecting strangers. He used to be a web developer, but now he's a camp counselor, because apparently nothing brings him more joy than watching kids try to catch fireflies while he eats his weight in lamb skewers. Gokhan's motto in life? 'Money can't buy happiness, but it sure can buy a lot of kebap.'"
   },
   {
     id: 3,

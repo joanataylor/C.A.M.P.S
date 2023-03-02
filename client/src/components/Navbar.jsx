@@ -22,6 +22,10 @@ const pages = [
     {
         name: 'Counselors',
         route: "/counselor"
+    },
+    {
+        name: 'New Activity',
+        route: "/newActivity"
     }];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
