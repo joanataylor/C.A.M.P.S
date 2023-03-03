@@ -7,114 +7,6 @@ import surf from "../images/surf.jpg"
 import snow from "../images/snow.jpg"
 import { maxWidth } from '@mui/system';
 
-const data = [
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Surfing",
-        photo: surf
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Snow Boarding",
-        photo: snow
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-    {
-        date: "Wed, Feb 12",
-        activity: "Wake Boarding",
-        photo: wake_boarding
-    },
-]
 const numKey = {
     "Jan": "01",
     "Feb": "02",
@@ -226,11 +118,15 @@ function DashBoard() {
                         <div style={{ height: "75%", width: "100%", overflow: "scroll", scrollBehavior: "smooth" }} className="mt-3 scroll">
                             {activities ? activities.map((activity) => {
                                 return (
-                                    <div key={activity.name} className='d-flex justify-content-between w-75' style={{ margin: "0 auto" }}>
+                                    <div key={activity.name} className='d-flex justify-content-between align-items-center' style={{ margin: "0 auto",width: "85%" }}>
                                         <a href={`activity/${activity.id}`}>
                                             <h4>{activity.name}</h4>
                                         </a>
-                                        <p className='font-weight-bold'>{monthKey[activity.date.slice(5, 7)]} {activity.date.slice(-2)}, {activity.date.slice(0, 4)}</p>
+                                        <p className='font-weight-bold align-self-end'>{monthKey[activity.date.slice(5, 7)]} {activity.date.slice(-2)}, {activity.date.slice(0, 4)}</p>
+                                        <div className='d-flex justify-content-between' style={{ width: "13%" }}>
+                                            <i class="fa-solid fa-pen"></i>
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
                                     </div>
                                 )
                             }) : ""}
