@@ -258,7 +258,7 @@ function DashBoard() {
                         </div>
                     </Paper>
                 </div>
-                <div className='d-flex flex-column justify-content-between' style={{ maxWidth: "40%" }}>
+                <div className='d-flex flex-column justify-content-between' style={{ width: "40%" }}>
                     <Paper className='calendar border border-dark'>
                         <Calendar setDate={setDate} value={value} setValue={setValue} date={date} setPostedActivity={setPostedActivity} />
                     </Paper>
