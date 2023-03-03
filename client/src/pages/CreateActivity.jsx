@@ -53,7 +53,7 @@ function CreateActivity() {
     <div
       className="container-fluid d-flex align-items-center justify-content-center"
       style={{
-        minHeight: "92.6vh",
+        minHeight: "94vh",
         padding: "0 25rem",
         backgroundSize: "cover",
         backgroundImage: `url(https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1277&q=80) `,

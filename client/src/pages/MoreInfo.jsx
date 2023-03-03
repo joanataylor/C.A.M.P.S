@@ -52,7 +52,7 @@ function MoreInfo() {
     <div
       className="container-fluid d-flex align-items-center justify-content-center"
       style={{
-        minHeight: "92.6vh",
+        minHeight: "96vh",
         padding: "0 25rem",
         backgroundSize: "cover",
         backgroundImage: `url(https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) `,
