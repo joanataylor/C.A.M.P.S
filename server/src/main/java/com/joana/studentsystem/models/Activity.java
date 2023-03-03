@@ -26,27 +26,27 @@ public class Activity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "Name is required!")
-    @Size(min = 3, max = 255, message = "Name must be between 3 and 255 characters")
+    // @NotEmpty(message = "Name is required!")
+    // @Size(min = 3, max = 255, message = "Name must be between 3 and 255 characters")
     private String name;
 
-    @NotEmpty(message = "Duration is required!")
-    @Size(min = 3, max = 255, message = "Duration must be between 3 and 255 characters")
+    // @NotEmpty(message = "Duration is required!")
+    // @Size(min = 3, max = 255, message = "Duration must be between 3 and 255 characters")
     private String duration;
 
-    @NotEmpty(message = "Date is required!")
+    // @NotEmpty(message = "Date is required!")
     private String date;
 
-    @NotEmpty(message = "description is required!")
-    @Size(min = 5, message = "Description must be at least 5 characters")
+    // @NotEmpty(message = "description is required!")
+    // @Size(min = 5, message = "Description must be at least 5 characters")
     private String description;
 
-    @NotEmpty(message = "Recommended Items is required!")
-    @Size(min = 5, message = "Recommended Items must be at least 5 characters")
+    // @NotEmpty(message = "Recommended Items is required!")
+    // @Size(min = 5, message = "Recommended Items must be at least 5 characters")
     private String items;
 
-    @NotEmpty(message = "Location is required!")
-    @Size(min = 5,max = 255, message = "Location must be between 3 and 255 characters")
+    // @NotEmpty(message = "Location is required!")
+    // @Size(min = 5,max = 255, message = "Location must be between 3 and 255 characters")
     private String location;
 
     @NotEmpty(message = "Image is required!")

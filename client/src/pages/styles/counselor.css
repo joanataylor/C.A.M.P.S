@@ -1,5 +1,7 @@
 .my-card {
   position: relative;
+  width: 28%;
+  
 }
 
 .card-overlay {
@@ -21,4 +23,8 @@
 .my-main-card {
   /* Change this value to adjust the width of the card */
   width: 550px;
+}
+
+.card {
+  padding: 0;
 }

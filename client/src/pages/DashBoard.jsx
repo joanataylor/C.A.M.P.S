@@ -216,7 +216,7 @@ function DashBoard() {
     return (
         <div>
             <div className='p-5 d-flex justify-content-around' style={{
-                height: "75vh", width: "100%", minHeight: "92.66vh",
+                height: "75vh", width: "100%", minHeight: "96vh",
                 backgroundSize: "cover",
                 backgroundImage: `url(https://i.imgur.com/79JNXwV.jpg) `,
             }}>
@@ -258,7 +258,7 @@ function DashBoard() {
                         </div>
                     </Paper>
                 </div>
-                <div className='d-flex flex-column justify-content-between' style={{ width: "40%" }}>
+                <div className='d-flex flex-column justify-content-between' style={{ width: "38%" }}>
                     <Paper className='calendar border border-dark'>
                         <Calendar setDate={setDate} value={value} setValue={setValue} date={date} setPostedActivity={setPostedActivity} />
                     </Paper>
