@@ -42,14 +42,15 @@ export default function ActivityDetail() {
       <VerticalNavbar />
       <div className="mx-auto">
         <Container className="d-flex justify-content-between ml-4">
-          <Card >
+          <Card>
             <h3 className="d-flex flex-row justify-content-center align-items-center">
               Activity Details
             </h3>
             <CardMedia
               component="img"
               alt="Water skiing"
-              height="250"
+              height="300"
+              width="500"
               image={activity.image}
             />
             <CardContent>
@@ -69,7 +70,7 @@ export default function ActivityDetail() {
             </CardActions>
           </Card>
 
-          <Card sx={{ maxWidth: 355, maxHeight: 300, backgroundColor: "#1876d2",}}>
+          <Card sx={{ maxWidth: 355, maxHeight: 300,}}>
             <CardContent>
             <Typography variant="body2" color="text.primary">
             <Typography variant="h4" sx={{ mb: 2, fontSize: "18px", }}>
