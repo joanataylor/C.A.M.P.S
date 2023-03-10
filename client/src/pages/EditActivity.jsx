@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import CreateEditForm from '../components/CreateEditForm';
-import CreateActivity from './CreateActivity'
 
 function EditActivity() {
 
@@ -64,7 +63,7 @@ function EditActivity() {
       }).catch(err => {
         console.log(err)
       })
-  }, [])
+  }, [id])
 
 
   return (
