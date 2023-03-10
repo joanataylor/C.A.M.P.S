@@ -27,7 +27,7 @@ const counselors = [
     id: 3,
     name: "Brandon",
     location: "California",
-    src: "https://media.licdn.com/dms/image/D5603AQFZ4mVnGEBzzA/profile-displayphoto-shrink_800_800/0/1672470836777?e=1683158400&v=beta&t=LNj-r8x1OATH3RLSH7jWpCAhafyDRYXRBYF6gJ__ebg",
+    src: "https://media.licdn.com/dms/image/D4D03AQGSMSYQ4Lu5tQ/profile-displayphoto-shrink_400_400/0/1678322930882?e=1683763200&v=beta&t=jY8UNhQ_wFqiP0WrES5HMbhUFaA5GxhxHeC4fmyrBss",
     alt: "Brandon",
     description:
       "Meet Brandon, the electrifying camp counselor! He's a web developer by day and a weightlifting superhero by night, but unfortunately, his muscles aren't enough to keep the lights on. His power always goes out, leaving him stumbling around in the dark like a confused moose. But fear not, for Brandon is here to save the day! With his trusty flashlight and his boundless enthusiasm, he'll keep your kids entertained and your campsite well-lit (as long as he doesn't accidentally bench-press the generator). So come on down and meet Brandon, the man who's always in the dark but never out of energy!",

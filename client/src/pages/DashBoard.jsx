@@ -32,10 +32,22 @@ function DashBoard() {
     activity: "Wake Boarding",
     photo: wake_boarding,
   });
+  const [deleted, setDeleted] = useState(false)
 
   const handleChange = (date) => {
     setDate(date);
   };
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:8080/activity/delete/${id}`, { method: "POST", headers: { "Content-Type": "application/json" } })
+      .then(res => res.json())
+      .then(data => {
+        console.log("item delete")
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
 
   useEffect(() => {
     fetch("http://localhost:8080/activity/all")
@@ -48,14 +60,13 @@ function DashBoard() {
     fetch("http://localhost:8080/campers/all")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data)
         setCampers(data);
+        setDeleted(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err + "hi"));
     const currentDate = new Date().toString().slice(4, 15);
-    const dateString = `${currentDate.slice(-4)}-${
-      numKey[currentDate.slice(0, 3)]
-    }-${currentDate.slice(4, 6)}`;
+    const dateString = `${currentDate.slice(-4)}-${numKey[currentDate.slice(0, 3)]
+      }-${currentDate.slice(4, 6)}`;
     fetch(`http://localhost:8080/activity/current/${dateString}`)
       .then((res) => res.json())
       .then((data) => {
@@ -64,7 +75,7 @@ function DashBoard() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [deleted]);
 
   // console.log(value)
   // console.log(dateString)
@@ -135,38 +146,41 @@ function DashBoard() {
             >
               {activities
                 ? activities.map((activity) => {
-                    return (
-                      <div
-                        key={activity.name}
-                        className="d-flex justify-content-between align-items-center"
-                        style={{ margin: "0 auto", width: "85%" }}
-                      >
-                        <a style={{ width: "40%"}} href={`activity/${activity.id}`}>
-                          <h4>{activity.name}</h4>
-                        </a>
-                        <div className="d-flex " style={{ width: "45%"}}>
-                          <p className="font-weight-bold align-self-end">
-                            {monthKey[activity.date.slice(5, 7)]}{" "}
-                            {activity.date.slice(-2)},{" "}
-                            {activity.date.slice(0, 4)}
-                          </p>
-                          <div
-                            className="d-flex justify-content-between ml-3"
-                            style={{ width: "13%" }}
-                          >
-                            <i className="fa-solid fa-pen ml-3 mr-3"></i>
-                            <i className="fa-solid fa-trash"></i>
-                          </div>
+                  return (
+                    <div
+                      key={activity.name}
+                      className="d-flex justify-content-between align-items-center"
+                      style={{ marginLeft: "1.2rem", width: "65%" }}
+                    >
+                      <a className="mr-4 d-flex align-items-start" style={{ width: "50%", wordWrap: "break-word" }} href={`activity/${activity.id}`}>
+                        <h4 style={{ width: "100%", wordWrap: "break-word" }}>{activity.name}</h4>
+                      </a>
+                      <div className="d-flex " style={{ width: "40%" }}>
+                        <p className="font-weight-bold align-self-end">
+                          {monthKey[activity.date.slice(5, 7)]}{" "}
+                          {activity.date.slice(-2)},{" "}
+                          {activity.date.slice(0, 4)}
+                        </p>
+                        <div
+                          className="d-flex justify-content-between ml-3"
+                          style={{ width: "13%" }}
+                        >
+                          <a href={`/editactivity/${activity.id}`}>
+                            <i className="fa-solid fa-pen ml-3 btn btn-primary"></i>
+                          </a>
+                          <i className="fa-solid fa-trash btn btn-danger" style={{ height: "fit-content" }} onClick={() => { handleDelete(activity.id); setDeleted(true)}
+                          }></i>
                         </div>
                       </div>
-                    );
-                  })
+                    </div>
+                  );
+                })
                 : ""}
             </div>
           </Paper>
           <Paper
             className="border border-dark "
-            style={{ height: "50%", maxHeight: "100%", borderRadius: "3rem" }}
+            style={{ height: "45%", maxHeight: "100%", borderRadius: "3rem" }}
           >
             <p
               className="h2 text-center bg-success font-weight-bold p-2 border border-dark"
@@ -194,22 +208,22 @@ function DashBoard() {
             >
               {campers
                 ? campers.map((camper) => {
-                    return (
-                      <div
-                        key={camper.id}
-                        className="d-flex justify-content-between lign-items-center w-75"
-                        style={{ margin: "0 auto" }}
-                      >
-                        <a href="#">
-                          <h4>
-                            {camper.first_name.charAt(0).toUpperCase() +
-                              camper.first_name.slice(1)}
-                          </h4>
-                        </a>
-                        <p>{camper.city}</p>
-                      </div>
-                    );
-                  })
+                  return (
+                    <div
+                      key={camper.id}
+                      className="d-flex justify-content-between lign-items-center w-75"
+                      style={{ margin: "0 auto" }}
+                    >
+                      <a href="#">
+                        <h4>
+                          {camper.first_name.charAt(0).toUpperCase() +
+                            camper.first_name.slice(1)}
+                        </h4>
+                      </a>
+                      <p>{camper.city}</p>
+                    </div>
+                  );
+                })
                 : ""}
             </div>
           </Paper>
@@ -243,11 +257,10 @@ function DashBoard() {
               >
                 <p>{postedActivity.name}</p>
                 <p>
-                  {` ${
-                    monthKey[postedActivity.date.slice(5, 7)]
-                  } ${postedActivity.date.slice(
-                    8
-                  )}, ${postedActivity.date.slice(0, 4)}`}
+                  {` ${monthKey[postedActivity.date.slice(5, 7)]
+                    } ${postedActivity.date.slice(
+                      8
+                    )}, ${postedActivity.date.slice(0, 4)}`}
                 </p>
               </div>
               <a href={`/activity/${postedActivity.id}`}>More Info</a>

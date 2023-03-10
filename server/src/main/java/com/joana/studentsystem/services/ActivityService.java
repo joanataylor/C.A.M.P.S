@@ -29,4 +29,8 @@ public class ActivityService {
     public Activity findByDate(String date) {
         return activityRepository.findUserByDate(date).orElse(null);
     }
+
+    public void delete(Long id) {
+        activityRepository.deleteById(id);
+    }
 }
