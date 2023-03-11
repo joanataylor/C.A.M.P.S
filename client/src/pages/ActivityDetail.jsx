@@ -29,7 +29,7 @@ export default function ActivityDetail() {
     <div className="d-flex flex-row justify-content-between align-items-center"
 
       style={{
-        minHeight: "92.65vh",
+        minHeight: "96vh",
         backgroundSize: "cover",
         backgroundImage: `url(https://i.imgur.com/iDOjNPh.jpg) `,
       }}
