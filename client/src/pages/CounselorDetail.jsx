@@ -101,9 +101,8 @@ function CounselorDetail() {
     <div
       className="p-5 d-flex justify-content-around"
       style={{
-        height: "108%",
         width: "100%",
-        minHeight: "92.66vh",
+        minHeight: "100%",
         backgroundSize: "cover",
         backgroundImage: `url(https://i.imgur.com/EnSclo4.jpg) `,
       }}
