@@ -124,14 +124,13 @@ function DashBoard() {
           backgroundImage: `url(https://i.imgur.com/79JNXwV.jpg) `,
         }}
       >
-        <div className="w-25 h-100">
+        <div className="h-100" style={{width: "45%"}}>
           <Paper
             className="mb-5 shadow-lg border border-dark"
-            style={{ height: "50%", maxHeight: "100%", borderRadius: "3rem" }}
+            style={{ height: "50%", maxHeight: "50%", borderRadius: "rem" }}
           >
             <p
-              className="h2 bg-info text-center font-weight-bold p-2 border border-dark"
-              style={{ borderRadius: "3rem 3rem 0 0 " }}
+              className="h2 bg-success text-center font-weight-bold p-2"
             >
               All Activities
             </p>
@@ -149,8 +148,8 @@ function DashBoard() {
                   return (
                     <div
                       key={activity.name}
-                      className="d-flex justify-content-between align-items-center"
-                      style={{ marginLeft: "1.2rem", width: "65%" }}
+                      className="d-flex justify-content-between align-items-end mb-5"
+                      style={{ marginLeft: "1.2rem", width: "90%", borderBottom:"2px solid black" }}
                     >
                       <a className="mr-4 d-flex align-items-start" style={{ width: "50%", wordWrap: "break-word" }} href={`activity/${activity.id}`}>
                         <h4 style={{ width: "100%", wordWrap: "break-word" }}>{activity.name}</h4>
@@ -171,7 +170,7 @@ function DashBoard() {
                           <i className="fa-solid fa-trash btn btn-danger" style={{ height: "fit-content" }} onClick={() => { handleDelete(activity.id); setDeleted(true)}
                           }></i>
                         </div>
-                      </div>
+                      </div> 
                     </div>
                   );
                 })
@@ -180,11 +179,10 @@ function DashBoard() {
           </Paper>
           <Paper
             className="border border-dark "
-            style={{ height: "45%", maxHeight: "100%", borderRadius: "3rem" }}
+            style={{ height: "42%", maxHeight: "100%" }}
           >
             <p
-              className="h2 text-center bg-success font-weight-bold p-2 border border-dark"
-              style={{ borderRadius: "3rem 3rem 0 0" }}
+              className="h2 text-center bg-success font-weight-bold p-2"
             >
               All Campers
             </p>
